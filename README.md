@@ -4,11 +4,11 @@ New custom Open edX theme for Netec Digital based on a fork of
 the default Stanford theme.
 
 Created by Lawrence McDaniel
-  lpm0073@gmail.com  
-  http://lawrencemcdaniel.com
-  https://www.linkedin.com/in/lawrencemcdaniel/
-  +52 1 (55) 4388-3070
-  + (415) 766-9012
+- lpm0073@gmail.com  
+- http://lawrencemcdaniel.com
+- https://www.linkedin.com/in/lawrencemcdaniel/
+- +52 1 (55) 4388-3070
+- +1 (415) 766-9012
 
 The tree is organized to mimic the directory structure of the edX
 codebase so that it's easy to tell where the files will end up upon
