@@ -12,6 +12,15 @@
   <footer>
     <div class="colophon">
       <nav class="nav-colophon">
+        <p></p>
+        <ol>
+          <li><a href="${reverse('tos')}">Terms of Service</a></li>
+          <li><a href="${reverse('tos')}#privacy">Privacy Policy</a></li>
+          <li><a href="${reverse('tos')}#honor">Honor Code</a></li>
+          <li><a href="${reverse('tos')}#copyright">Copyright</a></li>
+        </ol>
+
+        <!--
         <ol>
           <li><a href="${reverse('about')}">About</a></li>
           <li><a href="${reverse('about')}#careers">Careers</a></li>
@@ -21,6 +30,7 @@
           <li><a href="${reverse('tos')}#honor">Honor Code</a></li>
           <li><a href="${reverse('tos')}#copyright">Copyright</a></li>
         </ol>
+        -->
       </nav>
     </div>
     <div class="references">
@@ -29,7 +39,7 @@
 
     <div class="copyright">
         <p><span>
-            ${_('Copyright {year}. All rights reserved.').format(
+            ${_('Copyright {year}. Netec Digital. All rights reserved except where noted. Open edX and the edX and Open edX logos are registered trademarks or trademarks of edX Inc.').format(
                 year=date.today().year
             )}
         </span></p>
