@@ -1,17 +1,25 @@
 Overview
 ========
-This directory stores a default theme for an Open edX instance.
+New custom Open edX theme for Netec Digital based on a fork of
+the default Stanford theme.
 
-We've organized the tree to mimic the directory structure of the edX
+Created by Lawrence McDaniel
+  lpm0073@gmail.com  
+  http://lawrencemcdaniel.com
+  https://www.linkedin.com/in/lawrencemcdaniel/
+  +52 1 (55) 4388-3070
+  + (415) 766-9012
+
+The tree is organized to mimic the directory structure of the edX
 codebase so that it's easy to tell where the files will end up upon
 deploy. We'll use a special settings file to set the template and
-staticfiles paths properly to point to these files.
+static file paths properly to point to these files.
 
 ![Alt text](/netec-homescreen.jpg?raw=true "Netec Digital Open edX Default Theme Screenshot")
 
 Theme Authoring
 ===============
-To customize your theme:
+To customize this theme:
 - Fork this repository.
 - Clone it into the theme directory next to your edx-platform directory and rename the theme directory to your new theme's name.
 - Upload your own image assets.
