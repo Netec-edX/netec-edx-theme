@@ -18,12 +18,12 @@ $bg-color: #f7fe81; //Selected Content BG Color, ie. calendar          ***Custom
 //Main BG Color Variables
 $main-bg: #822537;
 $main-bg-60: lighten($main-bg, 18.5%); //Main Border/HR Color
-$main-bg-25: lighten($main-bg, 25%); 
+$main-bg-25: lighten($main-bg, 25%);
 
 //Secondary Color Variables
 $secondary: #b5a4b7;
 $secondary-50: lighten($secondary, 9%);
-$secondary-25: lighten($secondary, 20%); //Important Heading BG Color 
+$secondary-25: lighten($secondary, 20%); //Important Heading BG Color
 
 //Gray Color Variables
 $gray: #3f3f3f; //Main Text Color
@@ -61,9 +61,12 @@ $body-bg: $gray-1;
 $container-bg: $gray-1;
 $login-register-bg: $gray-1;
 $content-wrapper-bg: $gray-1;
-$header-image: none;
+//$header-image: none;
+$header-image: url('../themes/default/images/netec_header.jpg');
 $header-bg: transparentize(lighten($secondary, 18.5%), .25);
-$courseware-header-image: none;
+
+//$courseware-header-image: none;
+$courseware-header-image: url('../themes/default/images/netec_header.jpg');
 $courseware-header-bg: transparentize(lighten($secondary, 18.5%), .25);
 $footer-bg: $secondary-25;
 $courseware-footer-border: 1px solid $main-bg-60;
@@ -185,12 +188,17 @@ $footer_margin: ($baseline/4) 0;
 //-----------------
 //  CSS BG Images
 //-----------------
-$homepage-bg-image: url('../themes/default/images/sunrise.jpg');
+//$homepage-bg-image: url('../themes/default/images/sunrise.jpg');
+$homepage-bg-image: url('../themes/default/images/netec_header.jpg');
 
-$login-banner-image: none;
-$register-banner-image: none;
+//$login-banner-image: none;
+$login-banner-image: url('../themes/default/images/login-banner-image.png');
 
-$video-thumb-url: '../themes/default/images/edx.png';
+//$register-banner-image: none;
+$register-banner-image: url('../themes/default/images/register-banner-image.png');
+
+//$video-thumb-url: '../themes/default/images/edx.png';
+$video-thumb-url: '../themes/default/images/netec-388x388.png';
 
 //-----------------
 //  Mixin Styles
@@ -231,7 +239,7 @@ html {
 //-----------------
 .wrapper-footer {
     box-shadow: none !important;
-    
+
     footer {
         max-width: 1180px;
         margin: 0 auto;
