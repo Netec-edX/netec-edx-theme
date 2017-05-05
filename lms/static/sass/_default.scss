@@ -62,11 +62,11 @@ $container-bg: $gray-1;
 $login-register-bg: $gray-1;
 $content-wrapper-bg: $gray-1;
 //$header-image: none;
-$header-image: url('../themes/default/images/netec_header.jpg');
+$header-image: url('../themes/netec/images/netec_header.jpg');
 $header-bg: transparentize(lighten($secondary, 18.5%), .25);
 
 //$courseware-header-image: none;
-$courseware-header-image: url('../themes/default/images/netec_header.jpg');
+$courseware-header-image: url('../themes/netec/images/netec_header.jpg');
 $courseware-header-bg: transparentize(lighten($secondary, 18.5%), .25);
 $footer-bg: $secondary-25;
 $courseware-footer-border: 1px solid $main-bg-60;
@@ -189,16 +189,16 @@ $footer_margin: ($baseline/4) 0;
 //  CSS BG Images
 //-----------------
 //$homepage-bg-image: url('../themes/default/images/sunrise.jpg');
-$homepage-bg-image: url('../themes/default/images/netec_header.jpg');
+$homepage-bg-image: url('../themes/netec/images/netec_header.jpg');
 
 //$login-banner-image: none;
-$login-banner-image: url('../themes/default/images/login-banner-image.png');
+$login-banner-image: url('../themes/netec/images/login-banner-image.png');
 
 //$register-banner-image: none;
-$register-banner-image: url('../themes/default/images/register-banner-image.png');
+$register-banner-image: url('../themes/netec/images/register-banner-image.png');
 
 //$video-thumb-url: '../themes/default/images/edx.png';
-$video-thumb-url: '../themes/default/images/netec-388x388.png';
+$video-thumb-url: '../themes/netec/images/netec-388x388.png';
 
 //-----------------
 //  Mixin Styles
