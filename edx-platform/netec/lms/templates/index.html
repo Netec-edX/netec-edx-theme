@@ -5,25 +5,6 @@ from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
 %>
 <style>
-.home > header .outer-wrapper {
-    position: relative;
-    margin: 0 auto;
-    padding: 0px;
-    max-width: 1200px
-}
-
-.title-overrides {
-  padding: 0px !important;
-  margin: 0px !important;
-  background-color: #EBEBEB;
-}
-
-.heading-group-overrides {
-   width: 75% !important;
-   margin-top: 2.5%;
-   margin-bottom: 2.5%,
-}
-
 
 #splash {
     position: absolute;
@@ -40,6 +21,19 @@ from django.core.urlresolvers import reverse
    width: 100%;
    padding: 0px;
    margin-top: 5%:
+}
+
+#splash-right {
+    float: right;
+    height: 100%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: #7D7D7D;
+
 }
 
 #splash-left h1 {
@@ -62,18 +56,6 @@ from django.core.urlresolvers import reverse
   margin-bottom: 2%;
 }
 
-#splash-right {
-    float: right;
-    height: 100%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 5%;
-    padding-right: 5%;
-    border-left-style: solid;
-    border-left-width: 1px;
-    border-left-color: #7D7D7D;
-
-}
 
 </style>
 
@@ -83,49 +65,12 @@ from django.core.urlresolvers import reverse
       <div id="splash-right">
        <img src="${static.url('images/netec-trademark.png')}" alt="Netec Trademark" align="center">
       </div>
-      <div id="splash-left" class="border-me">
+      <div id="splash-left">
         <h1><strong>Netec Digital te da la bienvenida</strong></h1>
         <p>Forma parte de nuestra comunidad</p>
       </div>
     </div>  <!-- id="splash" -->
     <img width="100%" src="${static.url('images/netec_header.jpg')}" alt="Netec Header">
-<!--
-<div class="outer-wrapper">
-  % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-    <div class="course-search">
-      <form method="get" action="/courses">
-        <label><span class="sr">${_("Search for a course")}</span>
-          <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
-        </label>
-        <button class="search-button" type="submit">
-          <i class="icon fa fa-search" aria-hidden="true"></i><span class="sr">${_("Search")}</span>
-        </button>
-      </form>
-    </div>
-  % endif
-
-  % if show_homepage_promo_video:
-    <a href="#video-modal" class="media" rel="leanModal">
-      <div class="hero">
-        <div class="play-intro"></div>
-      </div>
-    </a>
-  % endif
-</div>
-
-  </header>
-  <%include file="${courses_list}" />
-
-</section>
-
-% if show_homepage_promo_video:
-  <section id="video-modal" class="modal home-page-video-modal video-modal">
-    <div class="inner-wrapper">
-      <iframe title="YouTube Video" width="640" height="360" src="//www.youtube.com/embed/${homepage_promo_video_youtube_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </section>
-% endif
--->
 
 <%block name="js_extra">
    <script type="text/javascript">
