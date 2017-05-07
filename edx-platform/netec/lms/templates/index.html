@@ -29,6 +29,12 @@ from django.core.urlresolvers import reverse
    float: left;
    width: 100%;
    padding: 0px;
+
+   position: relative;
+   top: 50%;
+   left: 25%;
+   border: 3px solid red;
+
 }
 
 #splash-left {
@@ -64,19 +70,13 @@ from django.core.urlresolvers import reverse
 
 }
 
-#welcome-message {
-  position: relative;
-  top: 50%;
-  left: 25%;
-  border: 3px solid red;
-}
 
 </style>
 
 <section class="home">
   <header>
     <img width="100%" src="${static.url('images/netec_header.jpg')}" alt="Netec Header">
-    <div id="welcome-message">
+    <div id="splash">
       <div id="splash-right">
        <img src="${static.url('images/netec-trademark.png')}" alt="Netec Trademark" align="center">
       </div>
@@ -84,10 +84,6 @@ from django.core.urlresolvers import reverse
         <h1><strong>Netec Digital te da la bienvenida</strong></h1>
         <p>Forma parte de nuestra comunidad</p>
       </div>
-<!-- 
-      <div class="title title-overrides border-me">
-      </div>
--->
     </div>  <!-- id="welcome-message" -->
 
 
