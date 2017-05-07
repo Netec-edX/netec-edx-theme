@@ -44,6 +44,11 @@ from django.core.urlresolvers import reverse
 
 #splash-left p {
   text-align: center;
+  font-style: italic;
+  font-size: 1.2em;
+  color: #646464;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
 }
 
 #splash-right {
@@ -77,12 +82,14 @@ from django.core.urlresolvers import reverse
          <img src="${static.url('images/netec-trademark.png')}" alt="Netec Trademark" align="center">
         </div>
 
-        <div class="heading-group heading-group-overrides border-me">
-          <div id="splash-left" class="border-me">
-            <h1><strong>Netec Digital te da la bienvenida</strong></h1>
-            <p>Forma parte de nuestra comunidad</p>
-          </div>
+        <div id="splash-left" class="border-me">
+          <h1><strong>Netec Digital te da la bienvenida</strong></h1>
+          <p>Forma parte de nuestra comunidad</p>
         </div>
+<!--
+        <div class="heading-group heading-group-overrides border-me">
+        </div>
+-->
       </div>  <!-- title title-overrides border-me -->
     </div>  <!-- id="welcome-message" -->
 
