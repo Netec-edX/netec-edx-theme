@@ -65,24 +65,21 @@ from django.core.urlresolvers import reverse
 <section class="home">
   <header>
 
-    <img width="100%" src="${static.url('images/netec_header.jpg')}" alt="Netec Header">
     <div class="outer-wrapper">
+      <img width="100%" src="${static.url('images/netec_header.jpg')}" alt="Netec Header">
       <div class="title title-overrides border-me">
+        <div id="splash-right">
+         <img src="${static.url('images/netec-trademark.png')}" alt="Netec Trademark" align="center">
+        </div>
 
-               <div id="splash-right">
-                 <img src="${static.url('images/netec-trademark.png')}" alt="Netec Trademark" align="center">
-               </div>
-
-       <div class="heading-group heading-group-overrides border-me">
+        <div class="heading-group heading-group-overrides border-me">
           % if homepage_overlay_html:
             ${homepage_overlay_html}
           % else:
-
             <div id="splash-left" class="border-me">
               <h1><strong>Netec Digital te da la bienvenida</strong></h1>
               <p>Forma parte de nuestra comunidad</p>
             </div>
-
           % endif
         </div>
         % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
@@ -97,8 +94,7 @@ from django.core.urlresolvers import reverse
             </form>
           </div>
         % endif
-
-      </div>
+      </div>  <!-- title title-overrides border-me -->
 
       % if show_homepage_promo_video:
         <a href="#video-modal" class="media" rel="leanModal">
