@@ -49,7 +49,7 @@ from django.core.urlresolvers import reverse
 #splash-left p {
   text-align: center;
   font-style: italic;
-  font-size: 1.2em;
+  font-size: 2em;
   color: #646464;
   letter-spacing: 1px;
   margin-bottom: 0px;
@@ -81,39 +81,38 @@ from django.core.urlresolvers import reverse
         <p>Forma parte de nuestra comunidad</p>
       </div>
     </div>  <!-- id="splash" -->
+    <img width="100%" src="${static.url('images/netec_header.jpg')}" alt="Netec Header">
 <!--
-<img width="100%" src="${static.url('images/netec_header.jpg')}" alt="Netec Header">
+<div class="outer-wrapper">
+  % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+    <div class="course-search">
+      <form method="get" action="/courses">
+        <label><span class="sr">${_("Search for a course")}</span>
+          <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
+        </label>
+        <button class="search-button" type="submit">
+          <i class="icon fa fa-search" aria-hidden="true"></i><span class="sr">${_("Search")}</span>
+        </button>
+      </form>
+    </div>
+  % endif
+
+  % if show_homepage_promo_video:
+    <a href="#video-modal" class="media" rel="leanModal">
+      <div class="hero">
+        <div class="play-intro"></div>
+      </div>
+    </a>
+  % endif
+</div>  <!-- outer-wrapper -->
 -->
-
-
-    <div class="outer-wrapper">
-      % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-        <div class="course-search">
-          <form method="get" action="/courses">
-            <label><span class="sr">${_("Search for a course")}</span>
-              <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
-            </label>
-            <button class="search-button" type="submit">
-              <i class="icon fa fa-search" aria-hidden="true"></i><span class="sr">${_("Search")}</span>
-            </button>
-          </form>
-        </div>
-      % endif
-
-      % if show_homepage_promo_video:
-        <a href="#video-modal" class="media" rel="leanModal">
-          <div class="hero">
-            <div class="play-intro"></div>
-          </div>
-        </a>
-      % endif
-    </div>  <!-- outer-wrapper -->
 
   </header>
   <%include file="${courses_list}" />
 
 </section>
 
+<!--
 % if show_homepage_promo_video:
   <section id="video-modal" class="modal home-page-video-modal video-modal">
     <div class="inner-wrapper">
@@ -121,6 +120,7 @@ from django.core.urlresolvers import reverse
     </div>
   </section>
 % endif
+-->
 
 <%block name="js_extra">
    <script type="text/javascript">
