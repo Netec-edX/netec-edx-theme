@@ -32,6 +32,8 @@ from django.core.urlresolvers import reverse
     width: 75%;
     margin: 12.5%;
     background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
 }
 
 #splash-left {
@@ -104,14 +106,13 @@ from django.core.urlresolvers import reverse
       </div>
     </a>
   % endif
-</div>  <!-- outer-wrapper -->
+</div>
 
   </header>
   <%include file="${courses_list}" />
 
 </section>
 
-<!--
 % if show_homepage_promo_video:
   <section id="video-modal" class="modal home-page-video-modal video-modal">
     <div class="inner-wrapper">
