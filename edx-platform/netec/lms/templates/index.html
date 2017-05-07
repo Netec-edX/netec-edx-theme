@@ -60,7 +60,7 @@ from django.core.urlresolvers import reverse
 }
 
 #welcome-message {
-  position: relative;
+  position: absolute;
   top: 0px;
   left: 0px;
   border: 3px solid red;
@@ -70,9 +70,8 @@ from django.core.urlresolvers import reverse
 
 <section class="home">
   <header>
-
+    <img width="100%" src="${static.url('images/netec_header.jpg')}" alt="Netec Header">
     <div class="outer-wrapper">
-      <img width="100%" src="${static.url('images/netec_header.jpg')}" alt="Netec Header">
       <div id="welcome-message">
         <div class="title title-overrides border-me">
           <div id="splash-right">
