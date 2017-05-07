@@ -78,14 +78,10 @@ from django.core.urlresolvers import reverse
         </div>
 
         <div class="heading-group heading-group-overrides border-me">
-          % if homepage_overlay_html:
-            ${homepage_overlay_html}
-          % else:
-            <div id="splash-left" class="border-me">
-              <h1><strong>Netec Digital te da la bienvenida</strong></h1>
-              <p>Forma parte de nuestra comunidad</p>
-            </div>
-          % endif
+          <div id="splash-left" class="border-me">
+            <h1><strong>Netec Digital te da la bienvenida</strong></h1>
+            <p>Forma parte de nuestra comunidad</p>
+          </div>
         </div>
         % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
           <div class="course-search">
