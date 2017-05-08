@@ -51,7 +51,7 @@ from openedx.core.djangolib.markup import HTML, Text
   position: absolute;
   top: 0px;
   right: 0px;
-  height: 83%;
+  size: 83%;
   padding-left: 3%;
   padding-right: 3%;
   padding-top: 1.5%;
@@ -71,6 +71,14 @@ from openedx.core.djangolib.markup import HTML, Text
     border-right-color: #7D7D7D;
 }
 
+.heading-right {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 20%;
+  margin: 0px;
+  padding: 0px;
+}
 </style>
 
 
@@ -84,7 +92,9 @@ from openedx.core.djangolib.markup import HTML, Text
                 <h1>Netec Digital te da la bienvenida</h1>
                 <p>Forma parte de nuestra comunidad</p>
               </div>
-              <img src="${static.url('images/netec-trademark.png')}" alt="Netec Trademark" align="center">
+              <div class="heading-right">
+                <img src="${static.url('images/netec-trademark.png')}" alt="Netec Trademark" align="center">
+              </div>
             </div> <!-- heading-group -->
           </div> <!-- title -->
         </div>    <!-- outer-wrapper -->
