@@ -25,6 +25,22 @@ from openedx.core.djangolib.markup import HTML, Text
   margin-top: 225px !important;
 }
 
+.heading-group h1 p {
+  font-family: sans-serif;
+}
+
+.heading-group p {
+
+}
+
+.heading-group img {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+}
+
+
 </style>
 
 
@@ -36,6 +52,7 @@ from openedx.core.djangolib.markup import HTML, Text
             <div class="heading-group">
               <h1>Netec Digital te da la bienvenida</h1>
               <p>Forma parte de nuestra comunidad</p>
+              <img src="${static.url('images/netec-trademark.png')}" alt="Netec Trademark" align="center">
             </div> <!-- heading-group -->
           </div> <!-- title -->
         </div>    <!-- outer-wrapper -->
