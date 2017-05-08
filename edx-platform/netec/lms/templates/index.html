@@ -1,75 +1,65 @@
+<%page expression_filter="h"/>
 <%inherit file="main.html" />
 <%namespace name='static' file='static_content.html'/>
 <%!
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
+
+from openedx.core.djangolib.markup import HTML, Text
 %>
-<style>
 
-#splash {
-    position: absolute;
-    top: 75px;
-    width: 65%;
-    margin: 17.5%;
-    background-color: #EBEBEB;
-    border: 1px solid #EBEBEB;
-    border-radius: 2px;
-}
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="home">
+      <header>
+        <div class="outer-wrapper">
+          <div class="title">
+            <div class="heading-group">
+              % if homepage_overlay_html:
+                ${homepage_overlay_html | n, decode.utf8}
+              % else:
+                  ## Translators: 'Open edX' is a registered trademark, please keep this untranslated. See http://open.edx.org for more information.
+                  <h1>${Text(_(u"Welcome to the Open edX{registered_trademark} platform!")).format(registered_trademark=HTML("<sup style='font-size: 65%'>&reg;</sup>"))}</h1>
+                  ## Translators: 'Open edX' is a registered trademark, please keep this untranslated. See http://open.edx.org for more information.
+                  <p>${_("It works! This is the default homepage for this Open edX instance.")}</p>
+              % endif
+            </div>
+            % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+              <div class="course-search">
+                <form method="get" action="/courses">
+                  <label><span class="sr">${_("Search for a course")}</span>
+                    <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
+                  </label>
+                  <button class="search-button" type="submit">
+                    <span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
+                  </button>
+                </form>
+              </div>
+            % endif
 
-#splash-left {
-   width: 100%;
-   padding: 0px;
-   margin-top: 5%:
-}
+          </div>
 
-#splash-right {
-    float: right;
-    height: 100%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 5%;
-    padding-right: 5%;
-    border-left-style: solid;
-    border-left-width: 1px;
-    border-left-color: #7D7D7D;
+          % if show_homepage_promo_video:
+            <a href="#video-modal" class="media" rel="leanModal">
+              <div class="hero">
+                <div class="play-intro"></div>
+              </div>
+            </a>
+          % endif
+        </div>
 
-}
+      </header>
+      <%include file="${courses_list}" />
 
-#splash-left h1 {
-  text-align: center;
-  color: #575757;
-  font-family: sans-serif;
-  font-size: 3.4vmin;
-  font-weight: 200;
-  margin: 2%;
-}
+    </section>
+</main>
 
-#splash-left p {
-  font-family: sans-serif;
-  text-align: center;
-  font-size: 2.25vmin;
-  font-weight: lighter;
-  color: #646464;
-  letter-spacing: 1px;
-  margin-top: 0px;
-  margin-bottom: 2%;
-}
-
-
-</style>
-
-<section class="home">
-  <header>
-    <div id="splash">
-      <div id="splash-right">
-       <img src="${static.url('images/netec-trademark.png')}" alt="Netec Trademark" align="center">
-      </div>
-      <div id="splash-left">
-        <h1><strong>Netec Digital te da la bienvenida</strong></h1>
-        <p>Forma parte de nuestra comunidad</p>
-      </div>
-    </div>  <!-- id="splash" -->
-    <img width="100%" src="${static.url('images/netec_header.jpg')}" alt="Netec Header">
+% if show_homepage_promo_video:
+  <section id="video-modal" class="modal home-page-video-modal video-modal">
+    <div class="inner-wrapper">
+      <iframe title="YouTube Video" width="640" height="360" src="//www.youtube.com/embed/${homepage_promo_video_youtube_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+% endif
 
 <%block name="js_extra">
    <script type="text/javascript">
@@ -80,3 +70,11 @@ from django.core.urlresolvers import reverse
       })
    </script>
 </%block>
+
+% if show_signup_immediately is not UNDEFINED:
+  ## NOTE: This won't work in production, because anonymous views are cached, so it will
+  ## show either with or without this extra js for 3 minutes at a time.
+<script type="text/javascript">
+  $(window).load(function() {$('#signup_action').trigger("click");});
+</script>
+% endif
