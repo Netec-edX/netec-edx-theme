@@ -25,18 +25,20 @@ from openedx.core.djangolib.markup import HTML, Text
   margin-top: 225px !important;
 }
 
-#title h1 {
+.heading-group {
+  font-family: sans-serif !important;
+  text-align: center !important;
+}
+
+.heading-group h1 {
   text-align: center;
   color: #575757;
-  font-family: sans-serif !important;
   font-size: 3.4vmin;
   font-weight: 200;
   margin: 2%;
 }
 
-#sub-title p {
-  font-family: sans-serif !important;
-  text-align: center;
+.heading-group p {
   font-size: 2.25vmin;
   font-weight: lighter;
   color: #646464;
@@ -59,9 +61,6 @@ from openedx.core.djangolib.markup import HTML, Text
   border-left-color: #7D7D7D;
 }
 
-.title {
-  height: auto !important;
-}
 
 </style>
 
@@ -72,8 +71,8 @@ from openedx.core.djangolib.markup import HTML, Text
         <div class="outer-wrapper">
           <div class="title">
             <div class="heading-group">
-              <h1 id="title">Netec Digital te da la bienvenida</h1>
-              <p id="sub-title">Forma parte de nuestra comunidad</p>
+              <h1>Netec Digital te da la bienvenida</h1>
+              <p>Forma parte de nuestra comunidad</p>
               <img src="${static.url('images/netec-trademark.png')}" alt="Netec Trademark" align="center">
             </div> <!-- heading-group -->
           </div> <!-- title -->
