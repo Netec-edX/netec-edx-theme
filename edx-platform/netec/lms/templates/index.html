@@ -34,22 +34,13 @@ from openedx.core.djangolib.markup import HTML, Text
         <div class="outer-wrapper">
           <div class="title">
             <div class="heading-group">
-              % if homepage_overlay_html:
-                ${homepage_overlay_html | n, decode.utf8}
-              % else:
-                  ## Translators: 'Open edX' is a registered trademark, please keep this untranslated. See http://open.edx.org for more information.
-                  <h1>${Text(_(u"Welcome to the Open edX{registered_trademark} platform!")).format(registered_trademark=HTML("<sup style='font-size: 65%'>&reg;</sup>"))}</h1>
-                  ## Translators: 'Open edX' is a registered trademark, please keep this untranslated. See http://open.edx.org for more information.
-                  <p>${_("It works! This is the default homepage for this Open edX instance.")}</p>
-              % endif
+              <h1>${Text(_(u"Welcome to the Open edX{registered_trademark} platform!")).format(registered_trademark=HTML("<sup style='font-size: 65%'>&reg;</sup>"))}</h1>
+              <p>${_("It works! This is the default homepage for this Open edX instance.")}</p>
             </div> <!-- heading-group -->
           </div> <!-- title -->
-
         </div>    <!-- outer-wrapper -->
-
       </header>
       <%include file="${courses_list}" />
-
     </section>
 </main>
 
