@@ -8,9 +8,9 @@ ${_("Change your life and start learning today by activating your "
     )}
 
 % if is_secure:
-  https://${ site }/activate/${ key }
+  https://edx.netecdigital.com/activate/${ key }
 % else:
-  http://${ site }/activate/${ key }
+  http://edx.netecdigital.com/activate/${ key }
 % endif
 
 ${_("If you didn't request this, you don't need to do anything; you won't "
