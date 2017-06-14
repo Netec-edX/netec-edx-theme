@@ -6,6 +6,7 @@ ${_("Change your life and start learning today by activating your "
     "paste it into your browser's address bar.").format(
       platform_name=settings.PLATFORM_NAME
     )}
+holaaaa!!!!
 
 % if is_secure:
   https://edx.netecdigital.com/activate/${ key }
