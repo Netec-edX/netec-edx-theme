@@ -17,7 +17,7 @@ ${_("There's just one more step before you can enroll in a course: "
   http://${ site }/activate/${ key }
 % endif
 ${_("Si no la solicitaste, no necesitas hacer nada "
-      "Por favor, no respondas este correo. "
-      " Si necesitas ayuda, contáctanos en informes@netecdigital.com."
+      "Por favor, no respondas este correo "
+      "Si necesitas ayuda, contáctanos en informes@netecdigital.com "
       "{platform_name} website.").format(platform_name=configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME))}
 
