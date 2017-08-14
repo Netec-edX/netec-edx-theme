@@ -1,0 +1,69 @@
+Clone github theme repository to netec ubuntu server:
+============================================================
+sudo bash netec-edx-theme.sh
+
+
+
+
+Compile Theme
+========================================
+sudo -H -u edxapp bash
+source /edx/app/edxapp/edxapp_env
+cd /edx/app/edxapp/edx-platform
+paver update_assets lms --settings=aws
+paver update_assets cms --settings=aws
+
+
+CREATE DJANGO SUPER USER:
+============================================================
+https://groups.google.com/forum/#!msg/openedx-ops/M5ytgpw57EE/MZs41-yIFAAJ
+	email: lpm0073@gmail.com
+	User: lpm0073
+	Pwd: netec
+
+sudo -u www-data /edx/bin/python.edxapp ./manage.py lms --settings aws create_user -s -p edx -e lpm0073@gmail.com
+sudo -u www-data /edx/bin/python.edxapp ./manage.py lms --settings aws changepassword lpm0073
+sudo -u www-data /edx/bin/python.edxapp ./manage.py lms --settings aws shell
+	from django.contrib.auth.models import User
+	me = User.objects.get(username="lpm0073")
+	me.is_superuser = True
+	me.is_staff = True
+	me.save()
+
+
+Delete a Course:
+============================================================
+sudo -H -u www-data bash
+source /edx/app/edxapp/edxapp_env
+cd /edx/app/edxapp/edx-platform
+/edx/bin/python.edxapp ./manage.py cms --settings aws delete_course 'course-v1:edX+DemoX+Demo_Course'
+/edx/bin/python.edxapp ./manage.py cms --settings aws delete_course 'course-v1:Microsoft+MSDAT203+1X-3'
+/edx/bin/python.edxapp ./manage.py cms --settings aws delete_course 'course-v1:Microsoft+dev210x+3'
+/edx/bin/python.edxapp ./manage.py cms --settings aws delete_course 'course-v1:Microsoft+dev204x+3'
+
+Load Spanish Language:
+============================================================
+https://github.com/edx/edx-platform/wiki/Internationalization-and-localization
+http://learning.perpetualny.com/blog/multi-language-support-on-open-edx
+
+sudo -H -u edxapp bash
+source /edx/app/edxapp/edxapp_env
+cd /edx/app/edxapp/edx-platform
+
+vim /edx/app/edxapp/.transifexrc 
+	[https://www.transifex.com]
+	hostname = https://www.transifex.com
+	username = mcdaniel0073
+	password = }{e6F7.88+GsV4G+
+	token =
+
+tx pull -l es-419
+
+* y por ultimo editar los archivos lms.env.json y cms.env.json en las variables de lenguaje y poner el es-419, reiniciar servicios y ya esta.
+
+
+
+themes directory:
+============================================================
+/edx/app/edxapp/edx-platform/themes
+

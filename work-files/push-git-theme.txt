@@ -1,0 +1,27 @@
+git add . 
+git commit -m "troubleshoot custom theme per http://stackoverflow.com/questions/28621687/edx-platform-cannot-apply-stanford-theme/30218512#30218512"
+git push
+
+
+
+
+sudo rm -rf /home/netec/netec-edx-theme
+cd /home/netec/
+sudo git clone https://github.com/lpm0073/netec-edx-theme.git
+sudo rm -rf /opt/bitnami/apps/edx/conf
+sudo mv /home/netec/netec-edx-theme/conf /opt/bitnami/apps/edx/
+cd /home/netec/
+sudo find netec-edx-theme -type d | xargs sudo chmod 775
+sudo find netec-edx-theme -type f | xargs sudo chmod 664
+sudo /opt/bitnami/ctlscript.sh restart edx
+
+
+Copy logo images:
+=====================
+sudo cp /home/netec/netec-edx-theme/edx-platform/netec/lms/static/images/netec-logo.png /opt/bitnami/apps/edx/edxapp/staticfiles/images/logo.d94f292efefc.png
+sudo cp /home/netec/netec-edx-theme/edx-platform/netec/lms/static/images/netec-logo.png /opt/bitnami/apps/edx/edxapp/staticfiles/images/logo.png
+sudo cp /home/netec/netec-edx-theme/edx-platform/netec/lms/static/images/netec-logo-large.png /opt/bitnami/apps/edx/edxapp/staticfiles/images/logo-large.75ed83d6b760.png
+sudo cp /home/netec/netec-edx-theme/edx-platform/netec/lms/static/images/netec-logo-large.png /opt/bitnami/apps/edx/edxapp/staticfiles/images/logo-large.png
+sudo cp /home/netec/netec-edx-theme/edx-platform/netec/lms/static/images/netec_header.jpg /opt/bitnami/apps/edx/edxapp/staticfiles/images/netec-header.jpg
+sudo cp /home/netec/netec-edx-theme/edx-platform/netec/lms/static/images/netec-trademark.png /opt/bitnami/apps/edx/edxapp/staticfiles/images/netec-trademark.png
+sudo cp /home/netec/netec-edx-theme/edx-platform/netec/lms/static/images/netec-trademark-large.png /opt/bitnami/apps/edx/edxapp/staticfiles/images/netec-trademark-large.png
